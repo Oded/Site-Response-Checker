@@ -24,7 +24,7 @@ func main() {
 		go func() {
 			defer wg.Done()
 			for url := range in {
-				checkIfOnline(url)
+				checkSite(url)
 			}
 		}()
 	}
@@ -37,7 +37,7 @@ func main() {
 	wg.Wait()
 }
 
-func checkIfOnline(url string) {
+func checkSite(url string) {
 	now := time.Now()
 	resp, err := http.Get(url)
 	if err != nil {

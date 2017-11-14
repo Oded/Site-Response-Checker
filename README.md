@@ -1,0 +1,1 @@
+Concurrently check the response time of web pages, using chans and workers in Go.
